@@ -1,0 +1,37 @@
+server:
+  port: 8081
+
+hikari:
+  book:
+    jdbcUrl: jdbc:mysql://spring:3306/book_test?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+
+  user:
+    jdbcUrl: jdbc:mysql://spring:3306/user_test?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+
+#################redis单机基础配置#################
+#spring:
+#  redis:
+#    # database: 5
+#    host: spring
+#    password: 123456
+#    port: 6379
+#    timeout: 3000
+#    pool:
+#      max-idle: 500
+#      min-idle: 50
+#      max-active: 2000
+#      max-wait: 1000
+
+#################redis集群基础配置#################
+spring:
+  redis:
+    cluster:
+      nodes:
+        - spring:7000
+        - summer:7003
